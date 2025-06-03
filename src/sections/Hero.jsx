@@ -1,3 +1,5 @@
+import Button from "../components/Button";
+import HeroExperience from "../components/HeroModels/HeroExperience";
 import { words } from "../constants"
 
 const Hero = () => {
@@ -36,13 +38,22 @@ const Hero = () => {
               <h1>that Powers Real Solutions </h1>
             </div>
             <p className="text-white-50 md:text-xl relative z-10">
-              Hey there! I’m Kavya — a full-stack & Android developer with a
-              strong grasp of DSA, passionate about building real-world projects
-              that scale.
+              Hey there! I’m Kavya — a full-stack & Android developer with a passion of Code
             </p>
+            <Button
+            className="md:w-80 md:h-16 w-60 h-12"
+            id="button"
+            text="See My Work"
+             />
           </div>
         </header>
+
         {/* {right 3d model} */}
+        <figure>
+          <div className="hero-3d-layout">
+            <HeroExperience />
+          </div>
+        </figure>
       </div>
     </section>
   );
