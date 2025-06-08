@@ -30,7 +30,7 @@ const NavBar = () => {
         <nav className="desktop">
           <ul>
             {navLinks.map(({ link, name }) => (
-              <li key={name} className="group">
+              <li key={name} className="group text-2xl">
                 <a href={link}>
                   <span>{name}</span>
                   <span className="underline" />
