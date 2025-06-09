@@ -1,12 +1,34 @@
-# React + Vite
+# 🌐 3D Developer Portfolio
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A stunning interactive **developer portfolio** built with **Three.js**, **GSAP**, and **EmailJS** to showcase my **projects**, **professional experience**, **skills**, and more through beautiful animations and immersive visuals.
 
-Currently, two official plugins are available:
+## 🚀 Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- ⚙️ **Three.js 3D Models** – Realistic interactive animations & visual scenes
+- ✨ **GSAP Animations** – Smooth scroll-triggered transitions and section reveals
+- 📧 **EmailJS Integration** – Working contact form to send emails without a backend
+- 💼 **Experience Timeline** – Clean layout of professional journey
+- 🔧 **Tech Stack Section** – Logos and cards to display tools & frameworks
+- 🌟 **Projects Gallery** – Highlight top works with interactivity
+- 📱 **Fully Responsive** – Optimized for all devices
+- 🌓 **Dark-themed Aesthetic** – Cool, modern UI/UX
 
-## Expanding the ESLint configuration
+## 🛠️ Built With
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- [Three.js](https://threejs.org/) – 3D JavaScript library
+- [GSAP](https://greensock.com/gsap/) – Animation library
+- [EmailJS](https://www.emailjs.com/) – Send emails directly from frontend
+- [React.js](https://reactjs.org/) – UI Library
+- [Tailwind CSS](https://tailwindcss.com/) – Utility-first CSS framework
+
+## 🖼️ Screens & Sections
+
+| Section        | Description |
+|----------------|-------------|
+| Hero Section   | Eye-catching animated intro |
+| About Me       | Brief overview with animations |
+| Experience     | Timeline-based experience section |
+| Projects       | Interactive cards with hover effects |
+| Skills & Stack | Tech logos, animated scroll-in |
+| Contact        | Email form integrated with EmailJS |
+
