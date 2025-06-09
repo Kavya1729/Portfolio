@@ -50,27 +50,6 @@ const abilities = [
   },
 ];
 
-//   {
-//     name: "React",
-//     imgPath: "/images/logos/react.png",
-//   },
-//   {
-//     name: "Node.js",
-//     imgPath: "/images/logos/node.png",
-//   },
-//   {
-//     name: "Kotlin (Android)",
-//     imgPath: "/images/logos/kotlin.png",
-//   },
-//   {
-//     name: "Java (DSA)",
-//     imgPath: "/models/Java.png",
-//   },
-//   {
-//     name: "MongoDB",
-//     imgPath: "/images/logos/mongodb.png",
-//   },
-// ];
 
 
 const techStackIcons = [
@@ -150,22 +129,22 @@ const expLogos = [
 
 const socialImgs = [
   {
-    name: "insta",
-    imgPath: "/images/insta.png",
+    name: "github",
+    imgPath: "/images/github.png",
+    url: "https://github.com/Kavya1729",
   },
   {
-    name: "fb",
-    imgPath: "/images/fb.png",
-  },
-  {
-    name: "x",
-    imgPath: "/images/x.png",
+    name: "leetcode",
+    imgPath: "/images/leetcode.png",
+    url: "https://leetcode.com/u/Kavya107",
   },
   {
     name: "linkedin",
     imgPath: "/images/linkedin.png",
+    url: "https://www.linkedin.com/in/mittalkavya/",
   },
 ];
+
 
 export {
   words,
