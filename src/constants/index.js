@@ -89,7 +89,7 @@ const techStackIcons = [
 const expCards = [
   {
     imgPath: "/images/experience.png",
-    title: "Software Development Intern",
+    title: "Software Development Intern (ThriverX)",
     date: "Aug 2024 – Nov 2024",
     responsibilities: [
       "Built a scalable Android app using Jetpack Compose tailored for medical records management.",
@@ -99,12 +99,12 @@ const expCards = [
   },
   {
     imgPath: "/images/experience.png",
-    title: "Frontend Developer Intern",
-    date: "Jan 2025 – Feb 2025",
+    title: "Software Developer Intern (Shegruh)",
+    date: "June 2025 – Sep 2025",
     responsibilities: [
-      "Developed reusable React.js components for SaaS analytics dashboards.",
-      "Integrated Recharts to visualize real-time metrics using live REST API data.",
-      "Optimized page load time by improving component structure and state management.",
+      "Converted Figma designs into responsive UIs using React and Material-UI.",
+      "Integrated 10+ REST APIs with error handling and optimized loading states.",
+      "Implemented drag-and-drop (react-dnd) and PDF generation (html2canvas + jsPDF) libraries to enhance user experience.",
     ],
   },
 ];
