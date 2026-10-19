@@ -53,11 +53,11 @@ const Hero = () => {
                   </span>
                 </span>
               </h1>
-              <h1>into project</h1>
-              <h1>that Powers Real Solutions </h1>
+              <h1>into products</h1>
+              <h1>that power real systems</h1>
             </div>
             <p className="text-white-50 md:text-xl relative z-10">
-              Hey there! I’m Kavya — a full-stack & Android developer with a passion of Code
+              I’m Kavya Mittal, a backend-focused software engineer. I build REST APIs, real-time systems, and full-stack products with Node.js, Express, MongoDB, and React.
             </p>
             <Button
             className="md:w-80 md:h-16 w-60 h-12"

@@ -7,16 +7,17 @@
 
 html,
 body {
-  width: 100dvw;
-  overflow-x: hidden;
+  width: 100%;
+  overflow-x: clip;
   background-color: black;
   color: white;
-  scroll-behavior: smooth;
+  scroll-behavior: auto;
   font-family: "Mona Sans", sans-serif;
 }
 
 section {
-  width: 100dvw;
+  width: 100%;
+  scroll-margin-top: 96px;
 }
 
 @theme {
@@ -469,4 +470,181 @@ section {
 
 .card:hover::before {
   opacity: 1;
+}
+
+.highlight-block {
+  margin-top: 7rem;
+}
+
+.highlight-kicker {
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  font-size: 0.8rem;
+  color: #839cb5;
+}
+
+.education-kicker {
+  margin-top: 4.5rem;
+}
+
+.achieve-grid {
+  margin-top: 1.5rem;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.25rem;
+}
+
+.achieve-card {
+  min-height: 280px;
+  border-radius: 1.75rem;
+  padding: 1.75rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background:
+    radial-gradient(90% 70% at 100% 0%, rgba(253, 92, 121, 0.22), transparent 52%),
+    radial-gradient(80% 60% at 0% 100%, rgba(98, 224, 255, 0.18), transparent 55%),
+    #0e0e10;
+}
+
+.achieve-card:nth-child(2) {
+  background:
+    radial-gradient(90% 70% at 0% 0%, rgba(98, 224, 255, 0.24), transparent 50%),
+    radial-gradient(70% 60% at 100% 100%, rgba(109, 69, 206, 0.28), transparent 55%),
+    #0e0e10;
+}
+
+.achieve-card:nth-child(3) {
+  background:
+    radial-gradient(80% 70% at 100% 100%, rgba(246, 211, 101, 0.22), transparent 52%),
+    radial-gradient(70% 50% at 0% 0%, rgba(253, 92, 121, 0.16), transparent 55%),
+    #0e0e10;
+}
+
+.achieve-kicker {
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  font-size: 0.75rem;
+  color: #d9ecff;
+}
+
+.achieve-stat {
+  margin-top: 0.75rem;
+  font-size: clamp(3.4rem, 6vw, 5rem);
+  font-weight: 650;
+  line-height: 0.9;
+  background: linear-gradient(120deg, #ffffff 10%, #62e0ff 45%, #fd5c79 85%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.achieve-card h3 {
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.achieve-detail {
+  margin-top: 0.5rem;
+  color: #d9ecff;
+  font-size: 1.05rem;
+  max-width: 28ch;
+}
+
+.edu-row {
+  margin-top: 1.5rem;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+}
+
+.edu-item {
+  border-radius: 1.25rem;
+  border: 1px solid #1c1c21;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.03), transparent 40%), #0e0e10;
+  padding: 1.5rem 1.4rem;
+}
+
+.edu-date {
+  color: #62e0ff;
+  font-size: 0.85rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.edu-item h3 {
+  margin-top: 0.7rem;
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+.edu-item p:last-child {
+  margin-top: 0.4rem;
+  color: #839cb5;
+}
+
+.skill-board {
+  margin-top: 4.5rem;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.15rem;
+}
+
+.skill-panel {
+  border-radius: 1.6rem;
+  padding: 1.6rem;
+  background:
+    radial-gradient(80% 120% at 0% 0%, rgba(98, 224, 255, 0.12), transparent 46%),
+    #0e0e10;
+}
+
+.skill-panel-head {
+  display: flex;
+  align-items: baseline;
+  gap: 0.9rem;
+}
+
+.skill-panel-head span {
+  color: #62e0ff;
+  font-size: 0.8rem;
+  letter-spacing: 0.18em;
+}
+
+.skill-panel-head h3 {
+  font-size: 1.7rem;
+  font-weight: 600;
+}
+
+.skill-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.7rem;
+  margin-top: 1.25rem;
+}
+
+.skill-chip {
+  border-radius: 999px;
+  border: 1px solid rgba(217, 236, 255, 0.14);
+  background: rgba(255, 255, 255, 0.04);
+  color: #d9ecff;
+  padding: 0.55rem 0.95rem;
+  font-size: 0.95rem;
+  transition: background 0.3s ease, color 0.3s ease, transform 0.3s ease;
+}
+
+.skill-chip:hover {
+  background: white;
+  color: black;
+  transform: translateY(-2px);
+}
+
+@media (min-width: 900px) {
+  .achieve-grid,
+  .edu-row {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .skill-board {
+    grid-template-columns: 1fr 1fr;
+  }
 }

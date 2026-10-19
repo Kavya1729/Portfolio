@@ -1,6 +1,6 @@
 import React from "react";
 import TitleHeader from "../components/TitleHeader";
-import { techStackIcons } from "../constants";
+import { skillGroups, techStackIcons } from "../constants";
 import TechIcon from "../components/Models/TechLogos/TechIcon";
 
 const TechStack = () => {
@@ -25,6 +25,24 @@ const TechStack = () => {
                 </div>
               </div>
             </div>
+          ))}
+        </div>
+
+        <div className="skill-board">
+          {skillGroups.map((group) => (
+            <article key={group.label} className="card skill-panel">
+              <div className="skill-panel-head">
+                <span>{group.index}</span>
+                <h3>{group.label}</h3>
+              </div>
+              <div className="skill-chips">
+                {group.items.map((item) => (
+                  <span key={item} className="skill-chip">
+                    {item}
+                  </span>
+                ))}
+              </div>
+            </article>
           ))}
         </div>
       </div>

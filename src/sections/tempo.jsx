@@ -2,6 +2,7 @@ import React, { useRef, useState } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
+import { projects } from "../constants";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -14,91 +15,75 @@ const ShowCaseSection = () => {
   const openProject = (id) => setActiveProject(id);
   const closeProject = () => setActiveProject(null);
 
-  // Scroll animation (only for gallery view)
+  const selected = projects.find((project) => project.id === activeProject);
+
   useGSAP(() => {
     if (activeProject !== null) return;
 
     projectRefs.current.forEach((card, index) => {
+      if (!card) return;
+
       gsap.fromTo(
         card,
-        { y: 50, opacity: 0 },
+        { y: 28, opacity: 0 },
         {
           y: 0,
           opacity: 1,
-          duration: 1.2,
-          delay: index * 0.2,
+          duration: 0.8,
+          delay: index * 0.08,
+          ease: "power2.out",
           scrollTrigger: {
             trigger: card,
-            start: "top bottom-=100",
+            start: "top 90%",
+            once: true,
           },
         }
       );
     });
-
-    gsap.fromTo(
-      sectionRef.current,
-      { opacity: 0 },
-      { opacity: 1, duration: 1 }
-    );
   }, [activeProject]);
 
   return (
     <section id="work" ref={sectionRef} className="app-showcase">
       <div className="w-full">
-        {/* =======================
-            GALLERY VIEW
-        ======================== */}
         {activeProject === null && (
           <div className="showcaselayout">
-            {/* PROJECT 1 */}
             <div
               className="first-project-wrapper cursor-pointer"
               ref={(el) => (projectRefs.current[0] = el)}
-              onClick={() => openProject("p1")}
+              onClick={() => openProject(projects[0].id)}
             >
-              <img src="/images/project1.png" alt="Property Booking Platform" />
+              <img src={projects[0].image} alt={projects[0].title} />
               <h2 className="text-2xl font-bold text-white mt-4">
-                Property Booking Platform
+                {projects[0].title}
               </h2>
+              <p className="text-white-50 mt-2">{projects[0].tagline}</p>
               <p className="text-sm mt-2 opacity-70 text-white">
                 Click to view details →
               </p>
             </div>
 
-            {/* PROJECT 2 */}
-            <div
-              className="project cursor-pointer"
-              ref={(el) => (projectRefs.current[1] = el)}
-              onClick={() => openProject("p2")}
-            >
-              <img src="/images/proj2.png" alt="Chat App" />
-              <h2 className="mt-3">Chatting Application</h2>
-              <p className="text-sm mt-1 opacity-70 text-white">
-                Click to view details →
-              </p>
-            </div>
-
-            {/* PROJECT 3 */}
-            <div
-              className="project cursor-pointer"
-              ref={(el) => (projectRefs.current[2] = el)}
-              onClick={() => openProject("p3")}
-            >
-              <img src="/images/proj3.png" alt="Weather App" />
-              <h2 className="mt-3">Weather Forecast App</h2>
-              <p className="text-sm mt-1 opacity-70 text-white">
-                Click to view details →
-              </p>
+            <div className="project-list-wrapper">
+              {projects.slice(1).map((project, index) => (
+                <div
+                  key={project.id}
+                  className="project cursor-pointer"
+                  ref={(el) => (projectRefs.current[index + 1] = el)}
+                  onClick={() => openProject(project.id)}
+                >
+                  <img src={project.image} alt={project.title} />
+                  <h2 className="mt-3">{project.title}</h2>
+                  <p className="text-white-50 mt-1">{project.tagline}</p>
+                  <p className="text-sm mt-1 opacity-70 text-white">
+                    Click to view details →
+                  </p>
+                </div>
+              ))}
             </div>
           </div>
         )}
 
-        {/* =======================
-            FOCUSED PROJECT VIEW
-        ======================== */}
-        {activeProject !== null && (
+        {selected && (
           <div className="max-w-5xl mx-auto flex flex-col">
-            {/* BACK BUTTON */}
             <button
               onClick={closeProject}
               className="mb-6 text-xl font-bold text-white self-start cursor-pointer"
@@ -106,33 +91,7 @@ const ShowCaseSection = () => {
               ← Back to projects
             </button>
 
-            {/* PROJECT DETAILS */}
-            {activeProject === "p1" && (
-              <ProjectDetail
-                image="/images/project1.png"
-                title="Property Booking Platform"
-                description="A scalable full-stack property booking system with authentication, listings, booking flow, and admin dashboard."
-                tech="React, Node.js, Express, MongoDB, Tailwind CSS"
-              />
-            )}
-
-            {activeProject === "p2" && (
-              <ProjectDetail
-                image="/images/proj2.png"
-                title="Chatting Application"
-                description="Real-time chat application with private & group chats, typing indicators, online presence, and message sync."
-                tech="MERN, Socket.io, JWT, Redux"
-              />
-            )}
-
-            {activeProject === "p3" && (
-              <ProjectDetail
-                image="/images/proj3.png"
-                title="Weather Forecast Application"
-                description="Live weather forecasting app with real-time API integration and location-based search."
-                tech="React, OpenWeather API, Tailwind CSS"
-              />
-            )}
+            <ProjectDetail project={selected} />
           </div>
         )}
       </div>
@@ -140,18 +99,34 @@ const ShowCaseSection = () => {
   );
 };
 
-const ProjectDetail = ({ image, title, description, tech }) => {
+const ProjectDetail = ({ project }) => {
   return (
-    <div className="project-detail text-center">
-      <img src={image} alt={title} className="w-full rounded-lg mb-6" />
+    <div className="project-detail">
+      <img src={project.image} alt={project.title} className="w-full rounded-lg mb-6" />
 
-      <h2 className="text-3xl font-semibold mb-4 text-white">{title}</h2>
+      <h2 className="text-3xl font-semibold mb-3 text-white">{project.title}</h2>
+      <p className="text-white-50 mb-6 text-lg">{project.description}</p>
 
-      <p className="text-white-50 mb-4">{description}</p>
+      <ul className="list-disc ms-5 flex flex-col gap-3 text-white-50 mb-6">
+        {project.highlights.map((item) => (
+          <li key={item} className="text-lg">
+            {item}
+          </li>
+        ))}
+      </ul>
 
-      <p className="text-sm opacity-80 text-white">
-        <strong>Tech Stack:</strong> {tech}
+      <p className="text-sm opacity-80 text-white mb-6">
+        <strong>Tech Stack:</strong> {project.tech}
       </p>
+
+      <a
+        href={project.github}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="inline-flex text-white underline underline-offset-4"
+      >
+        View on GitHub
+      </a>
     </div>
   );
 };
