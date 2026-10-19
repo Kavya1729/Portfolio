@@ -2,7 +2,7 @@ import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
-import { expCards } from "../constants";
+import { achievements, education, expCards } from "../constants";
 import TitleHeader from "../components/TitleHeader";
 
 gsap.registerPlugin(ScrollTrigger);
@@ -12,13 +12,14 @@ const Experience = () => {
     gsap.utils.toArray(".expText").forEach((text) => {
       gsap.from(text, {
         opacity: 0,
-        x: 100,
-        duration: 1,
+        x: 36,
+        duration: 0.75,
         ease: "power2.out",
+        immediateRender: false,
         scrollTrigger: {
           trigger: text,
-          start: "top 80%",
-          toggleActions: "play none none reverse",
+          start: "top 86%",
+          once: true,
         },
       });
     });
@@ -64,6 +65,35 @@ const Experience = () => {
                   </ul>
                 </div>
               </div>
+            ))}
+          </div>
+        </div>
+
+        <div className="highlight-block">
+          <p className="highlight-kicker">Achievements</p>
+          <div className="achieve-grid">
+            {achievements.map((item) => (
+              <article key={item.kicker} className="card achieve-card">
+                <div>
+                  <p className="achieve-kicker">{item.kicker}</p>
+                  <p className="achieve-stat">{item.stat}</p>
+                </div>
+                <div>
+                  <h3>{item.title}</h3>
+                  <p className="achieve-detail">{item.detail}</p>
+                </div>
+              </article>
+            ))}
+          </div>
+
+          <p className="highlight-kicker education-kicker">Education</p>
+          <div className="edu-row">
+            {education.map((item) => (
+              <article key={`${item.school}-${item.date}`} className="edu-item">
+                <p className="edu-date">{item.date}</p>
+                <h3>{item.school}</h3>
+                <p>{item.detail}</p>
+              </article>
             ))}
           </div>
         </div>

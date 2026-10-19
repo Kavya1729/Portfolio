@@ -1,10 +1,26 @@
-import React from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import { Environment, Float, OrbitControls, useGLTF } from '@react-three/drei'
 import { Canvas } from '@react-three/fiber';
 const TechIcon = ({model}) => {
     const scene = useGLTF(model.modelPath);
+    const wrapRef = useRef(null);
+    const [active, setActive] = useState(false);
+
+    useEffect(() => {
+      const node = wrapRef.current;
+      if (!node) return;
+
+      const observer = new IntersectionObserver(
+        ([entry]) => setActive(entry.isIntersecting),
+        { rootMargin: "180px" }
+      );
+      observer.observe(node);
+      return () => observer.disconnect();
+    }, []);
+
   return (
-    <Canvas>
+    <div ref={wrapRef} className="h-full w-full">
+    <Canvas dpr={[1, 1.5]} frameloop={active ? "always" : "never"}>
         <ambientLight intensity={0.3} />
         <directionalLight position={[5, 5, 5]} intensity={1} />
 
@@ -18,6 +34,7 @@ const TechIcon = ({model}) => {
             </group>
         </Float>
     </Canvas>
+    </div>
   )
 }
 

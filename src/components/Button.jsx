@@ -1,3 +1,4 @@
+import { getLenis } from "../smoothScroll";
 
 const Button = ({text,className,id}) => {
   return (
@@ -7,13 +8,16 @@ const Button = ({text,className,id}) => {
 
       const target = document.getElementById('counter')
       if(target && id){
-        const offset = window.innerHeight*0.15;
+        const offset = window.innerHeight * 0.15;
+        const lenis = getLenis();
+
+        if (lenis) {
+          lenis.scrollTo(target, { offset: -offset });
+          return;
+        }
 
         const top = target.getBoundingClientRect().top + window.scrollY - offset;
-        window.scrollTo({
-          top: top,
-          behavior: 'smooth'
-        });
+        window.scrollTo({ top, behavior: "smooth" });
       }
     }}
     

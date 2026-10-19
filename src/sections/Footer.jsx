@@ -4,8 +4,14 @@ const Footer = () => {
   return (
     <footer className="footer">
       <div className="footer-container">
-        <div className="flex flex-col justify-center">
-          <p>Terms & Conditions</p>
+        <div className="flex flex-col justify-center gap-1">
+          <p>Ghaziabad, India</p>
+          <a href="mailto:mkavya193@gmail.com" className="text-center md:text-start hover:text-white">
+            mkavya193@gmail.com
+          </a>
+          <a href="tel:+917983032550" className="text-center md:text-start hover:text-white">
+            +91 7983032550
+          </a>
         </div>
         <div className="socials flex gap-4">
           {socialImgs.map((socialImg, index) => (

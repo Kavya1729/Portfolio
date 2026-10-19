@@ -25,28 +25,28 @@ const words = [
 ];
 
 const counterItems = [
-  { value: 6, suffix: "+", label: "Months of Internship Experience" },
-  { value: 4, suffix: "+", label: "Full-Stack Projects Completed" },
-  { value: 700, suffix: "+", label: "DSA Problems Solved" },
-  { value: 300, suffix: "+", label: "Students Mentored in Coding Events" },
+  { value: 14, suffix: "+", label: "Months of Internship Experience" },
+  { value: 500, suffix: "+", label: "LeetCode Problems Solved" },
+  { value: 1900, suffix: "+", label: "LeetCode Rating (Knight)" },
+  { value: 3, prefix: "Top ", suffix: "%", label: "Globally on LeetCode" },
 ];
 
 
 const abilities = [
   {
     imgPath: "/images/fullstack.png",
-    title: "Full-Stack Proficiency",
-    desc: "Building scalable and dynamic applications using MERN stack, Socket.io, and modern web technologies.",
+    title: "Backend Engineering",
+    desc: "Designing REST APIs, authentication, real-time updates, and financial data pipelines with Node.js, Express, and MongoDB.",
   },
   {
     imgPath: "/images/motivation.png",
-    title: "Collaborative Development",
-    desc: "Working effectively in startup environments with cross-functional teams using Git, REST APIs, and agile practices.",
+    title: "Full-Stack Delivery",
+    desc: "Shipping product features end to end — from API contracts and streaming workflows to React interfaces used by real users.",
   },
   {
     imgPath: "/images/time.png",
-    title: "Rapid & Reliable Delivery",
-    desc: "Delivering real-time, high-performance solutions with a strong focus on clean architecture and timely deployment.",
+    title: "DSA & Competitive Programming",
+    desc: "LeetCode Knight with 500+ problems solved, plus ICPC 2025 Chennai Regionalist and ICPC India 2024 preliminary qualifier.",
   },
 ];
 
@@ -89,7 +89,29 @@ const techStackIcons = [
 const expCards = [
   {
     imgPath: "/images/experience.png",
-    title: "Software Development Intern (ThriverX)",
+    title: "Full-Stack Developer Intern — Gazzalion Tech",
+    date: "Jan 2026 – June 2026",
+    responsibilities: [
+      "Developed and maintained REST APIs that process and serve earnings transcripts, investor presentations, and financial reports for an equity analytics platform.",
+      "Designed a polling-based backend for live earnings-call tracking, exposing backend-generated isLive indicators for real-time application updates.",
+      "Integrated backend-driven MP3 and HLS audio streaming with ReactPlayer, and supported frontend integration through MCP-based Figma development.",
+      "Built an automated financial-document pipeline with Google Gemini to classify quarterly and annual reports through a scalable backend workflow.",
+    ],
+  },
+  {
+    imgPath: "/images/experience.png",
+    title: "Backend Developer Intern — Shegruh",
+    date: "June 2025 – Sept 2025",
+    responsibilities: [
+      "Implemented secure JWT authentication and authorization middleware with role-based access control for backend services.",
+      "Integrated and optimized 10+ REST APIs with request validation, structured error handling, and consistent response management.",
+      "Built reusable application components around a drag-and-drop workflow so architects can configure billing and quotation sections before generating custom PDFs.",
+      "Developed shared components for buttons, tabs, headings, and forms, improving consistency and maintainability across the product.",
+    ],
+  },
+  {
+    imgPath: "/images/experience.png",
+    title: "Software Development Intern — ThriverX",
     date: "Aug 2024 – Nov 2024",
     responsibilities: [
       "Built a scalable Android app using Jetpack Compose tailored for medical records management.",
@@ -97,15 +119,114 @@ const expCards = [
       "Designed a custom 4x4 grid UI component to improve patient image preview usability.",
     ],
   },
+];
+
+const education = [
   {
-    imgPath: "/images/experience.png",
-    title: "Software Developer Intern (Shegruh)",
-    date: "June 2025 – Sep 2025",
-    responsibilities: [
-      "Converted Figma designs into responsive UIs using React and Material-UI.",
-      "Integrated 10+ REST APIs with error handling and optimized loading states.",
-      "Implemented drag-and-drop (react-dnd) and PDF generation (html2canvas + jsPDF) libraries to enhance user experience.",
+    school: "Ajay Kumar Garg Engineering College",
+    detail: "B.Tech in Computer Science and Information Technology",
+    date: "2022 – 2026",
+  },
+  {
+    school: "RK Public School",
+    detail: "CBSE, Class XII — 92%",
+    date: "2022",
+  },
+  {
+    school: "RK Public School",
+    detail: "CBSE, Class X — 92.6%",
+    date: "2020",
+  },
+];
+
+const achievements = [
+  {
+    stat: "1900+",
+    kicker: "LeetCode Knight",
+    title: "Top 3% globally",
+    detail: "500+ problems solved, with a Knight rating above 1900.",
+  },
+  {
+    stat: "2025",
+    kicker: "ICPC Regionalist",
+    title: "Chennai Regional",
+    detail: "Qualified for the ICPC 2025 Chennai Regional Contest.",
+  },
+  {
+    stat: "2024",
+    kicker: "ICPC India",
+    title: "Preliminary Round",
+    detail: "Qualified the ICPC India 2024 Preliminary Round.",
+  },
+];
+
+const projects = [
+  {
+    id: "chatterverse",
+    title: "ChatterVerse",
+    tagline: "Real-time chat for private and group conversations",
+    image: "/images/proj2.png",
+    description:
+      "A MERN chat platform with Socket.IO and JWT. Users authenticate, search people, and talk in one-to-one or group chats with live delivery.",
+    highlights: [
+      "Private and group chats with typing indicators, read receipts, and real-time message delivery.",
+      "JWT authentication, user search, and MongoDB-backed conversations and notifications.",
+      "Real-time flow kept efficient with focused Socket.IO events and targeted database queries.",
     ],
+    tech: "MERN, Node.js, Express.js, MongoDB, Socket.IO, JWT",
+    github: "https://github.com/Kavya1729/ChatterVerse",
+  },
+  {
+    id: "wanderlust",
+    title: "Wanderlust",
+    tagline: "Backend for a property listing and booking platform",
+    image: "/images/project1.png",
+    description:
+      "An Airbnb-style backend where users sign up, publish stays, and leave reviews. Built to cover the core listing and booking data flows.",
+    highlights: [
+      "Authentication plus listing management so users can create, browse, and update properties.",
+      "Reviews and ratings stored in MongoDB and served through Express APIs.",
+      "Backend-focused implementation of the booking platform’s core user and listing workflows.",
+    ],
+    tech: "Node.js, Express.js, MongoDB",
+    github: "https://github.com/Kavya1729/Wanderlust",
+  },
+  {
+    id: "weather",
+    title: "Weather App",
+    tagline: "Live, location-based weather on Android",
+    image: "/images/proj3.png",
+    description:
+      "An Android app that shows current conditions for the user’s location — temperature, humidity, wind, and related forecast details.",
+    highlights: [
+      "Live weather from the OpenWeatherMap API, driven by the device location.",
+      "Clear mobile UI for temperature, humidity, wind speed, and local conditions.",
+    ],
+    tech: "Android, OpenWeatherMap API",
+    github: "https://github.com/Kavya1729/Weather-App",
+  },
+];
+
+const skillGroups = [
+  {
+    index: "01",
+    label: "Languages",
+    items: ["Java", "JavaScript", "TypeScript", "SQL"],
+  },
+  {
+    index: "02",
+    label: "Backend",
+    items: ["Node.js", "Express.js", "REST APIs", "MongoDB", "WebSockets"],
+  },
+  {
+    index: "03",
+    label: "Frontend",
+    items: ["React.js", "Next.js", "Redux", "React Query", "Tailwind CSS", "Material UI"],
+  },
+  {
+    index: "04",
+    label: "Mobile & Tools",
+    items: ["React Native", "Android", "Jetpack Compose", "Git", "Postman", "Figma"],
   },
 ];
 
@@ -155,4 +276,8 @@ export {
   socialImgs,
   techStackIcons,
   navLinks,
+  education,
+  achievements,
+  projects,
+  skillGroups,
 };
